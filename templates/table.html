@@ -1,0 +1,25 @@
+{% if table_title %}
+<div class="data-table-wrapper">
+    <div class="data-table-title">{{ table_title }}</div>
+{% else %}
+<div class="data-table-wrapper">
+{% endif %}
+    <table class="data-table{{ ' policy-table' if policy_table else '' }}">
+        <thead>
+            <tr>
+                {% for header in headers %}
+                <th{% if loop.index0 > 0 and numeric_columns %} class="num"{% endif %}>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr{% if row.highlight %} class="highlight"{% endif %}>
+                {% for cell in row.cells %}
+                <td{% if loop.index0 > 0 and numeric_columns %} class="num"{% endif %}>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

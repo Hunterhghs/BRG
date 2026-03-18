@@ -1,0 +1,27 @@
+<div class="cover-page">
+    <div class="cover-top-label">MARKET ANALYSIS &amp; STRATEGIC OUTLOOK &nbsp;|&nbsp; {{ year }} EDITION</div>
+
+    <div class="cover-title">{{ title }}</div>
+
+    <div class="cover-subtitle">{{ subtitle }}</div>
+
+    {% if description %}
+    <div class="cover-description">{{ description }}</div>
+    {% endif %}
+
+    {% if metrics %}
+    <div class="cover-metrics">
+        {% for metric in metrics %}
+        <div class="cover-metric">
+            <div class="cover-metric-value">{{ metric.value }}</div>
+            <div class="cover-metric-label">{{ metric.label }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="cover-footer">
+        <span class="cover-date">Prepared {{ prepared_date }}</span>
+        <span class="cover-confidential">Confidential — For Authorized Distribution Only</span>
+    </div>
+</div>

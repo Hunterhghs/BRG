@@ -1,0 +1,8 @@
+<div class="metrics-row">
+    {% for metric in metrics %}
+    <div class="metric-box">
+        <div class="metric-box-value">{{ metric.value }}</div>
+        <div class="metric-box-label">{{ metric.label }}</div>
+    </div>
+    {% endfor %}
+</div>

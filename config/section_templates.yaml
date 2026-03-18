@@ -1,0 +1,152 @@
+# Section Templates
+# Default outlines by report type. Agents use these as starting structures
+# and adapt them based on the specific topic.
+
+default:
+  description: "General market research report"
+  sections:
+    - title: "Executive Summary"
+      key_elements:
+        - "High-level market overview (2-3 paragraphs)"
+        - "4 headline metrics with values in callout boxes"
+        - "Key investment thesis or strategic narrative"
+      guidance: "Dense, data-rich summary. Lead with the most important finding. Include 4 quantitative callouts (e.g., market size, growth rate, key metric, forecast)."
+
+    - title: "Market Size & Growth Overview"
+      key_elements:
+        - "Current market size (revenue or capacity)"
+        - "Historical growth trajectory (5-10 year)"
+        - "Growth by segment/technology/category"
+        - "CAGR table with historical and projected figures"
+      guidance: "Open with current market size, then zoom out to growth trajectory. Include a data table with at least 5 rows showing segment breakdown and CAGR."
+
+    - title: "Investment & Funding Trends"
+      key_elements:
+        - "Total investment flows (annual, by sector)"
+        - "Key investor categories and motivations"
+        - "Notable deals, funding rounds, or capital commitments"
+        - "Financing mechanisms and instruments"
+      guidance: "Quantify capital flows. Break down by sector or category. Mention specific investor types and financing innovations."
+
+    - title: "Core Market Segment Analysis"
+      key_elements:
+        - "Deep dive on 2-3 primary sub-sectors"
+        - "Technology dynamics, pricing, competition"
+        - "Market leaders and competitive positioning"
+        - "Sub-sector specific data tables"
+      guidance: "This may span 2-3 separate sections depending on topic complexity. Each sub-sector gets its own heading, narrative, and data."
+      expandable: true
+      min_subsections: 2
+      max_subsections: 4
+
+    - title: "Regional Market Analysis"
+      key_elements:
+        - "4-6 regional profiles"
+        - "Market size and growth by region"
+        - "Policy environment and competitive dynamics per region"
+        - "Regional comparison table"
+      guidance: "Cover major regions: China, EU, US, Asia-Pacific, and emerging markets. Each region gets 1-2 paragraphs. Include a comparison table."
+
+    - title: "Infrastructure & Enabling Technologies"
+      key_elements:
+        - "Supporting infrastructure requirements"
+        - "Bottlenecks and capacity constraints"
+        - "Modernization trends and investment"
+        - "Technology enablers (digital, AI, etc.)"
+      guidance: "Focus on what infrastructure is needed to support market growth. Identify bottlenecks. Quantify infrastructure investment."
+
+    - title: "Policy & Regulatory Landscape"
+      key_elements:
+        - "Key legislation and regulatory frameworks"
+        - "Incentive programs and subsidies"
+        - "Trade policies and tariffs"
+        - "Policy comparison table across regions"
+      guidance: "List 4-6 major policy frameworks in a formatted table. Discuss carbon pricing, standards, mandates. Keep factual and specific."
+
+    - title: "Market Risks & Challenges"
+      key_elements:
+        - "4-6 named risk categories"
+        - "Supply chain risks"
+        - "Regulatory and policy uncertainty"
+        - "Technology and integration challenges"
+        - "Geopolitical factors"
+      guidance: "Each risk gets its own bold subheading and 1-2 paragraph analysis. Be specific about mechanisms and potential impacts."
+
+    - title: "Strategic Outlook & Forecasts"
+      key_elements:
+        - "5-10 year projection table (6-10 metrics)"
+        - "Key forecast assumptions"
+        - "3-5 strategic investment themes"
+        - "Emerging opportunities"
+      guidance: "Lead with a projection table. Follow with narrative on strategic themes. Each theme gets a bold subheading and explanatory paragraph."
+
+    - title: "Conclusion & Recommendations"
+      key_elements:
+        - "Summary of key findings (1-2 paragraphs)"
+        - "Recommendations for investors"
+        - "Recommendations for policymakers"
+        - "Recommendations for industry participants"
+      guidance: "Concise synthesis. Recommendations segmented by audience. Actionable and specific."
+
+# Report type variations — agents select or blend based on the topic
+
+market_analysis:
+  description: "Market analysis and investment outlook"
+  inherits: "default"
+  emphasis:
+    - "Market sizing and segmentation"
+    - "Investment trends and capital flows"
+    - "Competitive landscape"
+
+industry_deep_dive:
+  description: "In-depth industry analysis"
+  inherits: "default"
+  additional_sections:
+    - title: "Supply Chain Analysis"
+      key_elements:
+        - "Supply chain map and key nodes"
+        - "Concentration risks"
+        - "Reshoring and diversification trends"
+    - title: "Technology Roadmap"
+      key_elements:
+        - "Current vs. next-generation technologies"
+        - "R&D investment and timelines"
+        - "Commercialization outlook"
+
+sector_investment:
+  description: "Sector investment and funding report"
+  inherits: "default"
+  additional_sections:
+    - title: "Deal Flow & Funding Analysis"
+      key_elements:
+        - "Funding rounds by stage and size"
+        - "Top deals and investors"
+        - "Valuation trends"
+    - title: "Exit & Returns Outlook"
+      key_elements:
+        - "IPO pipeline"
+        - "M&A activity"
+        - "Historical return profiles"
+
+technology_assessment:
+  description: "Technology maturity and readiness assessment"
+  inherits: "default"
+  additional_sections:
+    - title: "Technology Maturity Assessment"
+      key_elements:
+        - "TRL (Technology Readiness Level) analysis"
+        - "Comparative benchmarking"
+        - "Adoption barriers and accelerators"
+    - title: "Use Cases & Applications"
+      key_elements:
+        - "Primary use cases by industry"
+        - "Pilot programs and early deployments"
+        - "Total addressable market by use case"
+
+regional_market:
+  description: "Regional market analysis"
+  inherits: "default"
+  emphasis:
+    - "Country-level profiles"
+    - "Regulatory comparison across jurisdictions"
+    - "Cross-border dynamics"

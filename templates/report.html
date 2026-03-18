@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="styles.css">
+    {% if extra_css %}
+    <style>{{ extra_css }}</style>
+    {% endif %}
+</head>
+<body>
+
+<!-- Running Header (used on content pages) -->
+<div class="running-header">
+    <span class="header-title">{{ short_title | upper }} — MARKET ANALYSIS &amp; OUTLOOK</span>
+    <span class="header-edition">{{ year }} Edition</span>
+</div>
+
+<!-- Running Footer -->
+<div class="running-footer">
+    <span class="footer-left">Confidential — {{ short_title }} Market Analysis</span>
+    <span class="footer-right"></span>
+</div>
+
+<!-- Cover Page -->
+{% include "cover.html" %}
+
+<!-- Table of Contents -->
+{% include "toc.html" %}
+
+<!-- Report Content -->
+<div class="report-content">
+{% for section in sections %}
+    {% include "section.html" %}
+{% endfor %}
+</div>
+
+</body>
+</html>

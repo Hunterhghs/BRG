@@ -1,0 +1,6 @@
+# BRG — Business Report Generator
+# Python dependencies
+
+weasyprint>=60.0
+Jinja2>=3.1
+PyYAML>=6.0

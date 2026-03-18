@@ -1,0 +1,11 @@
+<div class="toc-page">
+    <h2>Table of Contents</h2>
+    <ol class="toc-list">
+        {% for section in sections %}
+        <li class="toc-item">
+            <span class="toc-number">{{ section.number }}.</span>
+            <span class="toc-title">{{ section.title }}</span>
+        </li>
+        {% endfor %}
+    </ol>
+</div>

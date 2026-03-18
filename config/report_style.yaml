@@ -1,0 +1,67 @@
+# Report Style Configuration
+# Controls fonts, colors, margins, headers/footers, and layout
+
+page:
+  size: "Letter"  # Letter (8.5x11) or A4
+  margin_top: "1in"
+  margin_bottom: "1in"
+  margin_left: "1in"
+  margin_right: "1in"
+
+fonts:
+  heading: "Georgia, 'Times New Roman', serif"
+  body: "'Helvetica Neue', Helvetica, Arial, sans-serif"
+  mono: "'Courier New', Courier, monospace"
+
+font_sizes:
+  cover_title: "36pt"
+  cover_subtitle: "16pt"
+  section_title: "20pt"
+  subsection_title: "14pt"
+  body: "10.5pt"
+  table_header: "9pt"
+  table_body: "9pt"
+  footer: "8pt"
+  header: "8pt"
+  metric_value: "28pt"
+  metric_label: "9pt"
+
+colors:
+  primary: "#1a1a2e"       # Dark navy — headings, cover background
+  secondary: "#16213e"     # Deep blue — accents
+  accent: "#0f3460"        # Medium blue — table headers, rule lines
+  highlight: "#e94560"     # Red accent — metric values, callouts
+  text: "#2c2c2c"          # Body text
+  text_light: "#666666"    # Secondary text, captions
+  table_header_bg: "#1a1a2e"
+  table_header_text: "#ffffff"
+  table_alt_row: "#f8f9fa"
+  table_border: "#dee2e6"
+  cover_bg: "#1a1a2e"
+  cover_text: "#ffffff"
+  cover_accent: "#e94560"
+  rule_line: "#1a1a2e"
+
+header:
+  text: "{title} — MARKET ANALYSIS & OUTLOOK"
+  edition: "{year} Edition"
+  show_rule: true
+
+footer:
+  left: "Confidential — {title} Market Analysis"
+  right: "Page {page_number}"
+  show_rule: true
+
+cover:
+  headline_metrics_count: 4    # Number of KPIs on the cover
+  show_date: true
+  show_confidentiality: true
+  confidentiality_text: "Confidential — For Authorized Distribution Only"
+
+table_of_contents:
+  show_page_numbers: false     # WeasyPrint CSS handles TOC page refs
+  indent_subsections: true
+
+sections:
+  page_break_before: true      # Each major section starts on a new page
+  show_section_number: true
