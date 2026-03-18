@@ -27,3 +27,4 @@ Thumbs.db
 output/*.pdf
 output/*.json
 !output/.gitkeep
+AI_Coding_Agents_2026.pdf

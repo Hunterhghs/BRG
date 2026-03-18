@@ -280,6 +280,7 @@ body {
     padding-bottom: 6pt;
     border-bottom: 2pt solid #1a1a2e;
     line-height: 1.3;
+    page-break-after: avoid;
 }
 
 .section-number {
@@ -295,6 +296,7 @@ body {
     margin-top: 0.3in;
     margin-bottom: 0.15in;
     line-height: 1.3;
+    page-break-after: avoid;
 }
 
 .sub-subsection-title {
@@ -311,8 +313,8 @@ p {
     margin-bottom: 0.15in;
     text-align: justify;
     line-height: 1.65;
-    orphans: 3;
-    widows: 3;
+    orphans: 4;
+    widows: 4;
 }
 
 /* Bullet Lists */
@@ -373,6 +375,7 @@ li strong {
 .data-table-wrapper {
     margin: 0.25in 0;
     overflow: hidden;
+    page-break-inside: avoid;
 }
 
 .data-table-title {
@@ -463,6 +466,132 @@ blockquote {
     background: #f8f9fa;
     font-style: italic;
     color: #444444;
+}
+
+/* =====================================================
+   CHARTS & VISUALIZATIONS
+   ===================================================== */
+.chart-wrapper {
+    margin: 0.25in 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+.chart-wrapper svg {
+    max-width: 100%;
+}
+
+/* =====================================================
+   KEY FINDINGS CALLOUT
+   ===================================================== */
+.key-findings {
+    background: linear-gradient(135deg, #f8f9fc 0%, #eef1f8 100%);
+    border: 1px solid #d0d7e6;
+    border-left: 4pt solid #0f3460;
+    border-radius: 4pt;
+    padding: 16pt 20pt;
+    margin: 0.25in 0;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+.key-findings-header {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0f3460;
+    margin-bottom: 10pt;
+    padding-bottom: 6pt;
+    border-bottom: 1px solid #d0d7e6;
+}
+
+.key-findings-icon {
+    color: #e94560;
+    margin-right: 4pt;
+    font-size: 10pt;
+}
+
+.key-findings-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.key-findings-list li {
+    padding: 5pt 0 5pt 2pt;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    color: #2c2c2c;
+    border-bottom: 1px dotted #dde0e8;
+}
+
+.key-findings-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.finding-icon {
+    color: #e94560;
+    font-size: 8pt;
+    margin-right: 4pt;
+}
+
+/* =====================================================
+   COMPARISON CARDS
+   ===================================================== */
+.comparison-row {
+    display: flex;
+    gap: 0.15in;
+    margin: 0.25in 0;
+    flex-wrap: wrap;
+}
+
+.comparison-card {
+    flex: 1;
+    min-width: 1.3in;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 4pt;
+    padding: 14pt 16pt;
+    text-align: center;
+    page-break-inside: avoid;
+    box-shadow: 0 1pt 3pt rgba(0,0,0,0.04);
+}
+
+.comparison-title {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    color: #666666;
+    margin-bottom: 6pt;
+}
+
+.comparison-value {
+    font-size: 24pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 4pt;
+}
+
+.comparison-subtitle {
+    font-size: 8pt;
+    color: #888888;
+    margin-bottom: 4pt;
+}
+
+.comparison-change {
+    font-size: 9pt;
+    font-weight: 700;
+    margin-top: 4pt;
+}
+
+.comparison-change.positive {
+    color: #06d6a0;
+}
+
+.comparison-change.negative {
+    color: #e94560;
 }
 
 /* =====================================================
