@@ -34,7 +34,7 @@ def render_bar_chart(
     value_prefix: str = "",
     value_suffix: str = "",
     colors: Optional[list[str]] = None,
-    height: int = 260,
+    height: int = 200,
     width: int = 560,
 ) -> str:
     """Render a vertical bar chart as inline SVG.
@@ -192,7 +192,7 @@ def render_line_chart(
     title: Optional[str] = None,
     value_prefix: str = "",
     value_suffix: str = "",
-    height: int = 260,
+    height: int = 200,
     width: int = 560,
     show_area: bool = True,
 ) -> str:
@@ -313,7 +313,7 @@ def render_donut_chart(
     values: list[float],
     title: Optional[str] = None,
     colors: Optional[list[str]] = None,
-    height: int = 240,
+    height: int = 190,
     width: int = 560,
     center_label: Optional[str] = None,
     center_value: Optional[str] = None,

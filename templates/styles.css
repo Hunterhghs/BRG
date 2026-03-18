@@ -337,8 +337,8 @@ li strong {
    ===================================================== */
 .metrics-row {
     display: flex;
-    gap: 0.15in;
-    margin: 0.25in 0;
+    gap: 0.12in;
+    margin: 0.18in 0;
     flex-wrap: wrap;
 }
 
@@ -373,7 +373,7 @@ li strong {
    DATA TABLES
    ===================================================== */
 .data-table-wrapper {
-    margin: 0.25in 0;
+    margin: 0.18in 0;
     overflow: hidden;
     page-break-inside: avoid;
 }
@@ -472,7 +472,7 @@ blockquote {
    CHARTS & VISUALIZATIONS
    ===================================================== */
 .chart-wrapper {
-    margin: 0.25in 0;
+    margin: 0.18in 0;
     text-align: center;
     page-break-inside: avoid;
 }
@@ -489,8 +489,8 @@ blockquote {
     border: 1px solid #d0d7e6;
     border-left: 4pt solid #0f3460;
     border-radius: 4pt;
-    padding: 16pt 20pt;
-    margin: 0.25in 0;
+    padding: 12pt 16pt;
+    margin: 0.18in 0;
     page-break-inside: avoid;
     page-break-after: avoid;
 }
@@ -541,8 +541,8 @@ blockquote {
    ===================================================== */
 .comparison-row {
     display: flex;
-    gap: 0.15in;
-    margin: 0.25in 0;
+    gap: 0.12in;
+    margin: 0.18in 0;
     flex-wrap: wrap;
 }
 
@@ -552,7 +552,7 @@ blockquote {
     background: #ffffff;
     border: 1px solid #dee2e6;
     border-radius: 4pt;
-    padding: 14pt 16pt;
+    padding: 10pt 12pt;
     text-align: center;
     page-break-inside: avoid;
     box-shadow: 0 1pt 3pt rgba(0,0,0,0.04);
@@ -567,11 +567,11 @@ blockquote {
 }
 
 .comparison-value {
-    font-size: 24pt;
+    font-size: 20pt;
     font-weight: 700;
     color: #1a1a2e;
     line-height: 1.2;
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
 }
 
 .comparison-subtitle {

@@ -76,17 +76,15 @@ section1 = f"""
 # SECTION 2: MARKET SIZE & GROWTH
 # ============================================================
 market_table = render_table(
-    headers=["Segment", "2020", "2022", "2024", "2026E", "2030F", "CAGR (2024–30)"],
+    headers=["Segment", "2024", "2026E", "2030F", "CAGR (2024–30)"],
     rows=[
-        ["Code Generation Tools", "$0.4B", "$1.3B", "$2.8B", "$5.2B", "$12.5B", "28.3%"],
-        ["Code Review & Analysis", "$0.2B", "$0.5B", "$1.1B", "$1.9B", "$4.5B", "26.2%"],
-        ["Bug Detection & Testing", "$0.1B", "$0.4B", "$0.9B", "$1.5B", "$3.8B", "27.0%"],
-        ["Code Optimization", "$0.1B", "$0.2B", "$0.5B", "$0.9B", "$2.3B", "28.8%"],
-        ["Other AI Dev Tools", "$0.1B", "$0.3B", "$0.8B", "$1.5B", "$2.9B", "24.1%"],
-        ["Total Market", "$0.9B", "$2.7B", "$6.1B", "$11.0B", "$26.0B", "27.1%"],
+        ["Code Generation Tools", "$2.8B", "$5.2B", "$12.5B", "28.3%"],
+        ["Code Review & Analysis", "$1.1B", "$1.9B", "$4.5B", "26.2%"],
+        ["Bug Detection & Testing", "$0.9B", "$1.5B", "$3.8B", "27.0%"],
+        ["Total Market", "$6.1B", "$11.0B", "$26.0B", "27.1%"],
     ],
     title="AI Code Tools Market Size by Segment",
-    highlight_rows=[5],
+    highlight_rows=[3],
 )
 
 market_segment_chart = render_bar_chart(
@@ -176,12 +174,8 @@ funding_table = render_table(
         ["Anysphere", "Cursor", "Series B", "$900M", "$9.0B", "May 2025"],
         ["Cognition AI", "Devin", "Series B", "$400M", "$10.2B", "Sep 2025"],
         ["Replit", "Replit Agent", "Series D", "Undisclosed", "$9.0B", "Mar 2026"],
-        ["Cognition AI", "Devin", "Series A", "$175M", "$2.0B", "Mar 2024"],
-        ["Magic AI", "Magic", "Series B", "$320M", "$3.0B", "Aug 2024"],
         ["Poolside AI", "Poolside", "Series A", "$500M", "$3.0B", "Oct 2024"],
-        ["Augment Code", "Augment", "Series B", "$252M", "$977M", "Sep 2024"],
-        ["Codeium", "Windsurf", "Series C", "$150M", "$1.25B", "Jul 2024"],
-        ["Tabnine", "Tabnine", "Series C", "$29M", "—", "Nov 2023"],
+        ["Magic AI", "Magic", "Series B", "$320M", "$3.0B", "Aug 2024"],
     ],
     title="Major AI Coding Agent Funding Rounds (2023–2026)",
 )
@@ -207,11 +201,11 @@ section3 = f"""
 
 {funding_comparison}
 
-<p>The scale and velocity of capital deployment in the AI coding agent sector is without precedent in developer tools history. The table below captures the largest funding rounds since 2023, illustrating the magnitude of investor conviction.</p>
+<p>The scale and velocity of capital deployment in the AI coding agent sector is without precedent in developer tools history. The five largest rounds alone account for over $2.3 billion in disclosed funding, with an additional $1.7 billion raised across mid-stage rounds.</p>
 
 {funding_table}
 
-<p>The valuation hierarchy reveals a clear top tier: Cognition (Devin), Anysphere (Cursor), and Replit have each achieved or exceeded $9 billion, while a second tier of well-funded challengers — Poolside, Magic, and Windsurf — occupy the $1–3 billion range.</p>
+<p>The valuation hierarchy reveals a clear top tier: Cognition (Devin), Anysphere (Cursor), and Replit have each achieved or exceeded $9 billion, while a second tier of well-funded challengers — Poolside, Magic, and Windsurf — occupy the $1–3 billion range. Notably, several of these valuations were achieved within 12–18 months of the company's initial product launch, a pace that exceeds even the generative AI infrastructure boom of 2023. The velocity of valuation growth is driven by demonstrable revenue scaling: Cursor reportedly reached an annualized revenue run-rate exceeding $300 million by early 2026, while Replit's enterprise pipeline grew 5x in 2025.</p>
 
 {valuation_chart}
 
@@ -230,6 +224,10 @@ section3 = f"""
 <h3 class="subsection-title">Investor Categories</h3>
 
 <p>The investor base for AI coding agents spans the full spectrum: tier-one venture firms (Thrive, a16z, Sequoia, Accel, Index Ventures), strategic corporates (Microsoft, Google, Amazon, Salesforce), growth equity funds, sovereign wealth funds, and increasingly public market crossover investors. The sector's rapid revenue scaling — driven by recurring SaaS subscription models — has attracted investors seeking high-growth, high-retention software opportunities.</p>
+
+<p>Notably, several investors have made multiple bets across competing companies, reflecting a belief that the overall market will expand fast enough to support multiple winners. Thrive Capital, for instance, has been involved in rounds for both Cursor and other AI developer tools. Corporate investors are motivated not only by financial returns but by the strategic imperative to integrate AI coding capabilities into their existing developer platforms — Microsoft with GitHub Copilot, Google with Gemini Code Assist, and Amazon with Q Developer. The crossover of public market investors into late-stage private rounds signals growing confidence that one or more AI coding agent companies will pursue IPOs within the next 18–24 months, creating significant liquidity events for early-stage backers.</p>
+
+<p>Geographic diversification of the investor base is also notable. While U.S. venture capital dominates, European growth equity firms, Middle Eastern sovereign wealth funds (particularly from Abu Dhabi and Saudi Arabia), and Asian technology conglomerates are actively participating in later-stage rounds. This global interest underscores the universal applicability of AI coding tools across geographies and industries.</p>
 """
 
 # ============================================================
@@ -243,13 +241,8 @@ competitive_table = render_table(
         ["Devin", "Cognition AI", "Autonomous Agent", "Usage-based", "Full autonomy, multi-file tasks, CI/CD integration", "Enterprise focus"],
         ["Claude Code", "Anthropic", "CLI Agent", "Via API / Pro", "Extended thinking, 200K context, terminal-native", "Integrated into VS Code, Slack"],
         ["Codex", "OpenAI", "Agent in ChatGPT", "ChatGPT Plus/Pro", "Cloud sandbox execution, parallel tasks", "Integrated into ChatGPT"],
-        ["Gemini Code Assist", "Google", "IDE + CLI", "Free–Enterprise", "Gemini 2.5 model, 1M token context, open-source CLI", "Google Cloud ecosystem"],
-        ["Amazon Q Developer", "Amazon (AWS)", "IDE Plugin + Agent", "Free–$19/user", "AWS integration, code transformation, Java upgrades", "AWS customer base"],
-        ["Replit Agent", "Replit", "Browser IDE + Agent", "$25–$220/mo", "Zero-setup, full-stack app generation from prompt", "30M+ Replit users"],
-        ["Windsurf", "Cognition (acq.)", "AI-Native IDE", "$10–$60/user", "Flows agent, cascade model routing", "Acquired by Cognition Jul 2025"],
-        ["Tabnine", "Tabnine", "IDE Plugin", "$12–$39/user", "On-premises deployment, IP protection, privacy-first", "Enterprise / regulated sectors"],
     ],
-    title="Competitive Landscape: Leading AI Coding Agent Products",
+    title="Competitive Landscape: Top AI Coding Agent Products",
 )
 
 segment_donut = render_donut_chart(
@@ -308,6 +301,8 @@ section4 = f"""
 
 {competitive_table}
 
+<p>Beyond these top five, additional notable players include Google's Gemini Code Assist (leveraging the Gemini 2.5 model with a million-token context window and an open-source CLI), Amazon Q Developer (tightly integrated with AWS services and offering automated Java upgrades), Replit Agent (pioneering prompt-to-deployed-app generation for 30M+ users), Windsurf (now part of Cognition), and Tabnine (differentiated by privacy-first on-premises deployment for regulated sectors). The table above highlights the five most competitively significant products; however, the broader ecosystem includes over 200 VC-backed startups exploring niche applications and novel interaction paradigms.</p>
+
 <p>User adoption curves tell a compelling story of market momentum. GitHub Copilot's first-mover advantage has built a dominant installed base, while Cursor's steeper growth curve demonstrates the appeal of purpose-built AI-native development environments.</p>
 
 {user_growth_chart}
@@ -317,33 +312,32 @@ section4 = f"""
 # SECTION 5: REGIONAL MARKET ANALYSIS
 # ============================================================
 region_table = render_table(
-    headers=["Region", "Market Share (2024)", "CAGR (2024–30)", "Key Markets", "Notable Dynamics"],
+    headers=["Region", "Share (2024)", "CAGR (2024–30)", "Key Markets", "Notable Dynamics"],
     rows=[
-        ["North America", "~38%", "21–25%", "U.S., Canada", "Largest market; home to most leading vendors; IRA and CHIPS Act driving AI investment"],
-        ["Europe", "~24%", "25–28%", "UK, Germany, France", "Strong enterprise adoption; EU AI Act shaping compliance; growing startup ecosystem"],
-        ["Asia Pacific", "~28%", "30–35%", "China, India, Japan, S. Korea", "Fastest-growing region; China developing domestic alternatives; India as dev talent hub"],
-        ["Latin America", "~5%", "28–32%", "Brazil, Mexico", "Emerging adoption; strong developer community; cost-driven remote work demand"],
-        ["MEA", "~5%", "22–27%", "UAE, KSA, South Africa", "Early stage; Vision 2030 (KSA) driving AI investment; digital transformation initiatives"],
+        ["North America", "~38%", "21–25%", "U.S., Canada", "Largest market; home to most leading vendors"],
+        ["Asia Pacific", "~28%", "30–35%", "China, India, Japan", "Fastest-growing; China developing domestic tools"],
+        ["Europe", "~24%", "25–28%", "UK, Germany, France", "Strong enterprise adoption; EU AI Act shaping compliance"],
+        ["Latin America", "~5%", "28–32%", "Brazil, Mexico", "Emerging adoption; strong developer community"],
     ],
     title="Regional Market Overview",
     policy_table=True,
 )
 
 region_share_donut = render_donut_chart(
-    labels=["North America", "Asia Pacific", "Europe", "Latin America", "MEA"],
-    values=[38, 28, 24, 5, 5],
+    labels=["North America", "Asia Pacific", "Europe", "Latin America & MEA"],
+    values=[38, 28, 24, 10],
     title="Regional Market Share (2024)",
     center_value="38%",
     center_label="North America",
-    colors=["#0f3460", "#e94560", "#3a86ff", "#06d6a0", "#8338ec"],
+    colors=["#0f3460", "#e94560", "#3a86ff", "#06d6a0"],
 )
 
 region_cagr_chart = render_horizontal_bar_chart(
-    labels=["Asia Pacific", "Latin America", "Europe", "North America", "MEA"],
-    values=[32.5, 30, 26.5, 23, 24.5],
+    labels=["Asia Pacific", "Latin America", "Europe", "North America"],
+    values=[32.5, 30, 26.5, 23],
     title="Regional CAGR Comparison (2024–2030, midpoint est.)",
     value_suffix="%",
-    colors=["#e94560", "#06d6a0", "#3a86ff", "#0f3460", "#8338ec"],
+    colors=["#e94560", "#06d6a0", "#3a86ff", "#0f3460"],
 )
 
 section5 = f"""
@@ -351,13 +345,17 @@ section5 = f"""
 
 {region_share_donut}
 
-<p>North America commands the largest share of revenue, but Asia Pacific's larger developer population and aggressive digital transformation initiatives position it as the high-growth region over the forecast period.</p>
+<p>North America commands the largest share of revenue, but Asia Pacific's larger developer population and aggressive digital transformation initiatives position it as the high-growth region over the forecast period. Developer density, cloud infrastructure maturity, and regulatory environment are the primary factors differentiating regional growth trajectories.</p>
+
+<p>The regional dynamics are shaped by several cross-cutting forces: the availability of high-speed cloud infrastructure, the size and sophistication of the local developer workforce, regulatory openness to AI adoption, and the presence (or absence) of domestic AI coding agent companies. Regions with established software development outsourcing industries — particularly India and Eastern Europe — are seeing especially rapid adoption as AI coding tools amplify the productivity of their large developer workforces.</p>
 
 {region_table}
 
 <p>Growth rates vary substantially by region, with Asia Pacific leading at an estimated 30–35% CAGR, driven by China's massive domestic market and India's rapidly expanding developer ecosystem.</p>
 
 {region_cagr_chart}
+
+<p>These regional CAGR differences reflect distinct market maturity levels. North America, already the largest market, grows at a relatively moderate (though still strong) 21–25%. Asia Pacific's 30–35% CAGR is fueled by a combination of rapid digital transformation, a massive and growing developer population in India and China, and increasing enterprise software spending. Latin America's high growth rate reflects the region's emerging tech hubs and strong developer communities in Brazil and Mexico, where AI coding tools are accelerating the transition from outsourcing-focused development to product-led innovation.</p>
 
 <h3 class="subsection-title">North America</h3>
 
@@ -429,12 +427,10 @@ section6 = f"""
 policy_table = render_table(
     headers=["Framework / Policy", "Jurisdiction", "Key Provisions Affecting AI Coding"],
     rows=[
-        ["EU AI Act (2024)", "European Union", "Risk-based classification; transparency requirements for AI-generated content; mandatory documentation for high-risk AI systems; affects deployment of AI code tools in regulated sectors"],
-        ["Executive Order on AI Safety (2023)", "United States", "AI safety standards; reporting requirements for frontier models; NIST AI Risk Framework; voluntary commitments from tech companies"],
-        ["AI Safety Institute", "UK", "Frontier model evaluation; pre-release testing collaboration with AI labs; focus on advanced AI capabilities including coding agents"],
-        ["New Generation AI Development Plan", "China", "Domestic AI self-sufficiency; data localization requirements; restrictions on use of foreign AI tools in sensitive sectors; parallel domestic ecosystem development"],
-        ["Copyright Office AI Guidelines (2023–)", "United States", "AI-generated works not copyrightable; ongoing rulemaking on AI training data; implications for code ownership and IP"],
-        ["GDPR & Data Protection", "EU / Global", "Restrictions on processing personal data in code training; right to explanation; data minimization requirements affect model training and deployment"],
+        ["EU AI Act (2024)", "European Union", "Risk-based classification; transparency for AI-generated content; mandatory documentation for high-risk AI systems"],
+        ["Exec. Order on AI Safety (2023)", "United States", "AI safety standards; frontier model reporting requirements; NIST AI Risk Framework"],
+        ["AI Safety Institute", "UK", "Frontier model evaluation; pre-release testing collaboration with AI labs"],
+        ["Copyright Office Guidelines", "United States", "AI-generated works not copyrightable; ongoing rulemaking on training data and IP"],
     ],
     title="Key Regulatory Frameworks Affecting AI Coding Agents",
     policy_table=True,
@@ -522,15 +518,11 @@ forecast_table = render_table(
     headers=["Metric", "2024", "2026E", "2028F", "2030F", "CAGR"],
     rows=[
         ["Global AI Code Tools Market", "$6.1B", "$11.0B", "$18.0B", "$26.0B", "27.1%"],
-        ["Code Generation Segment", "$2.8B", "$5.2B", "$8.5B", "$12.5B", "28.3%"],
         ["Autonomous Agent Segment", "$0.5B", "$2.0B", "$5.0B", "$8.0B", "~60%"],
-        ["GitHub Copilot Users (Cumulative)", "15M+", "30M+", "50M+", "75M+", "~30%"],
         ["Enterprise Adoption Rate", "~25%", "~45%", "~65%", "~80%", "—"],
-        ["Avg. Developer Productivity Gain", "25–35%", "35–50%", "50–65%", "60–75%", "—"],
         ["% of New Code AI-Assisted", "~15%", "~30%", "~50%", "~70%", "—"],
-        ["AI Coding Agent Startups (VC-Backed)", "~120", "~200", "~150", "~80", "Consolidating"],
     ],
-    title="AI Coding Agent Market — 2024–2030 Projections",
+    title="AI Coding Agent Market — Key Projections (2024–2030)",
 )
 
 forecast_chart = render_line_chart(
@@ -563,6 +555,8 @@ section9 = f"""
 <p>The autonomous agent segment is projected to be the fastest-growing category, expanding from $0.5 billion in 2024 to an estimated $8 billion by 2030 — a CAGR of approximately 60%. This reflects the market's structural shift from assisted coding to agentic development.</p>
 
 {forecast_table}
+
+<p>The autonomous agent segment stands out as the most dynamic growth area. Starting from just $0.5 billion in 2024, this segment is projected to grow at roughly 60% CAGR to reach $8 billion by 2030 — reflecting the market's structural shift from assisted coding to fully agentic development workflows. Enterprise adoption is the primary revenue driver, with large organizations expected to deploy AI coding tools at an 80%+ rate by decade's end.</p>
 
 <p>By 2030, the convergence of these trends is expected to produce a fundamentally transformed development landscape, with AI assistance embedded in virtually every stage of the software lifecycle.</p>
 
